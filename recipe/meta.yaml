@@ -16,17 +16,18 @@ build:
 
 requirements:
   host:
-    - python >=3.9,<3.13
+    - python {{ python_min }}
     - pip
     - poetry-core
   run:
-    - python >=3.9,<3.13
+    - python >={{ python_min }},<3.13
 
 test:
   imports:
     - pycron
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
