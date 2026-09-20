@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pycron
-  version: 3.2.0
+  version: "3.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: e125a28aca0295769541a40633f70b602579df48c9cb357c36c28d2628ba2b13
+  sha256: 877017822a65b949713b4746dcd3a3ff5bbd8b26db55e20e472dc191ea539d69
 
 build:
   number: 0
