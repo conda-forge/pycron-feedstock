@@ -1,15 +1,14 @@
 schema_version: 1
 
 context:
-  name: pycron
   version: "3.3.0"
 
 package:
-  name: ${{ name|lower }}
+  name: pycron
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pycron/pycron-${{ version }}.tar.gz
   sha256: 877017822a65b949713b4746dcd3a3ff5bbd8b26db55e20e472dc191ea539d69
 
 build:
@@ -21,7 +20,8 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - poetry-core
+    - hatchling
+    - uv-dynamic-versioning
   run:
     - python >=${{ python_min }},<4.0
 
@@ -30,7 +30,9 @@ tests:
       imports:
         - pycron
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
 
 about:
   license: MIT
